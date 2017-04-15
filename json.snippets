@@ -1,0 +1,21 @@
+snippet babel "babel 2015" w
+"babel": {
+	"presets": ["es2015"]
+}
+endsnippet
+
+snippet ava "ava config" b
+"ava": {
+	"files": [
+		"test/*_test.js"
+	],
+	"concurrency": 5,
+	"failFast": true,
+	"tap": true,
+	"powerAssert": false,
+	"require": [
+		"babel-register"
+	],
+	"babel": "inherit"
+}
+endsnippet

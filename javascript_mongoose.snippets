@@ -1,0 +1,10 @@
+snippet mongooseSchema "mongoose schema"
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+
+const $1Schema = new Schema({
+	$0
+})
+
+module.exports = mongoose.model('$1', $1Schema)
+endsnippet

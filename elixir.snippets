@@ -1,0 +1,64 @@
+snippet p "pipe |>" w
+|> $1
+endsnippet
+
+snippet def "def do" b
+def $1 do
+	$0
+end
+endsnippet
+
+snippet defm "defmodule" b
+defmodule $1 do
+	$0
+end
+endsnippet
+
+snippet fa "=>" w
+$1 => $2
+endsnippet
+
+snippet a "anonymous fn" w
+fn $1 -> $0 end
+endsnippet
+
+snippet af "anonymous fn multiline" w
+fn ->
+	$0
+end
+endsnippet
+
+snippet dep "add dependency" w
+{:$1, "~> $0"}
+endsnippet
+
+snippet for "for <-" b
+for $1 <- $2 do
+	$0
+end
+endsnippet
+
+
+# data structures
+## List
+snippet li "List append" b
+$1 = [$2 | $3]
+endsnippet
+
+## Map
+snippet m "%{}" w
+%{$1}
+endsnippet
+
+snippet s "%X{}" w
+%$1{$2}
+endsnippet
+
+snippet mi "Map append" b
+$1 = %{$2 | $3}
+endsnippet
+
+# String
+snippet em "#{}" w
+#{$1}
+endsnippet

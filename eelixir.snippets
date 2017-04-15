@@ -1,0 +1,23 @@
+snippet e "<% %>" w
+<% $1 %>
+endsnippet
+
+snippet o "<%= %>" w
+<%= $1 %>
+endsnippet
+
+snippet for "for <- do" w
+<%= for $1 <- @$1s do %>
+	$0
+<% end %>
+endsnippet
+
+snippet link "link to:"
+<%= link "$1", to: $0 %>
+endsnippet
+
+snippet form "form_for"
+<%= form_for $1, fn f -> %>
+	$0
+<% end %>
+endsnippet

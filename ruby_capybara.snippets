@@ -1,0 +1,53 @@
+snippet sce "feature scenario"
+scenario '$1' do
+	$0
+end
+endsnippet
+
+snippet cav "feature visit"
+visit $1
+endsnippet
+
+snippet ethc "expect to have content"
+expect(page).to have_content($1)
+endsnippet
+
+# click
+snippet caco "feature click on"
+click_on $1
+endsnippet
+
+snippet cacb "feature click_button"
+click_button $1
+endsnippet
+
+snippet cacl "feature click_link"
+click_link $1
+endsnippet
+
+# forms
+snippet cafi "feature fill in"
+fill_in $1, with: $0
+endsnippet
+
+snippet cach "feature check"
+check $1
+endsnippet
+
+snippet cach "feature uncheck"
+uncheck $1
+endsnippet
+
+snippet cas "feature select"
+select $1, from: $0
+endsnippet
+
+# query
+snippet eths
+expect(page).to have_selector($1)
+endsnippet
+
+# find
+snippet cafn "find"
+find($1)
+endsnippet

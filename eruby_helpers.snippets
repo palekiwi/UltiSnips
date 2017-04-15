@@ -1,0 +1,11 @@
+snippet ff "form_for" b
+<%= form_for($1) do |f| %>
+	<%= f.label $4 %>
+	<%= f.$5 $4, class: $6 %>
+	<%= f.submit $2, class: $3 %>
+<% end %>
+endsnippet
+
+snippet lt "link_to" w
+<%= link_to "$1", $2 %>
+endsnippet

@@ -1,0 +1,65 @@
+snippet wpconf "webpack.config" b
+const webpack = require('webpack')
+const path = require('path')
+
+module.exports = {
+  //debug: true,
+  //noInfo: true,
+  devtool: 'cheap-module-source-map',
+  entry: [
+    'webpack-hot-middleware/client?reload=true',
+    './src/index.js'
+  ],
+  target: 'web',
+  output: {
+    path: __dirname + '/dist',
+    publicPath: '/',
+    filename: 'bundle.js'
+  },
+  devServer: {
+    contentBase: './src'
+  },
+  plugins: [
+    new webpack.HotModuleReplacementPlugin()
+  ],
+  module: {
+    loaders: [
+      {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
+      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
+      {test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/, loader: "file-loader"}
+    ]
+  }
+}
+endsnippet
+
+snippet srcServer "webpack-express server" b
+const express = require('express')
+const webpack = require('webpack')
+const path = require('path')
+const config = require('../webpack.config.dev.js')
+
+/* eslint-disable no-console */
+
+const port = 3000
+const app = express()
+const compiler = webpack(config)
+
+app.use(require('webpack-dev-middleware')(compiler, {
+  noInfo: true,
+  publicPath: config.output.publicPath
+}))
+
+app.use(require('webpack-hot-middleware')(compiler))
+
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../src/index.html'))
+})
+
+app.listen(port, (err) => {
+  if (err) {
+    console.log(err)
+  } else {
+    console.log(`Server started on port ${port}`)
+  }
+})
+endsnippet

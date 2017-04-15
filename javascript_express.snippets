@@ -1,0 +1,33 @@
+snippet express
+const express = require('express')
+endsnippet
+
+#router
+snippet ar "app.get" b
+app.${1:get}('${2}', (req, res) => {
+	${0}
+})
+endsnippet
+
+#request
+snippet rst "req.status" b
+res.status(${1:200})
+endsnippet
+
+snippet rhtml "response content type html" b
+res.set('Content-type', 'text/html')
+endsnippet
+
+snippet rjson "response content type json" b
+res.set('Content-type', 'application/json')
+endsnippet
+
+snippet rsend "res.send" b
+res.send($1)
+endsnippet
+
+snippet cmet
+exports.${1} = (req, res) => {
+	${0}
+}
+endsnippet

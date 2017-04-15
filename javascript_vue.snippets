@@ -1,0 +1,81 @@
+snippet imc
+import ${1:} from 'src/components/$1'
+endsnippet
+
+snippet imv
+import Vue from 'vue'
+endsnippet
+
+snippet act
+export const ${1} = (${2}) => {
+	dispatch('${0}')
+}
+endsnippet
+
+snippet cdat
+data () {
+	return {
+		${1}: ${0}
+	}
+}
+endsnippet
+
+# component testing
+snippet vmou
+import 'Vue' from 'vue'
+import 'Vuex' from 'vuex'
+import { store } from '..examples/store'
+
+Vue.use(Vuex)
+
+const inject = require('!!vue?inject!src/components/RaceEditDrivers.vue')
+const ComponentWithMocks = inject({})
+
+const vm = new Vue({
+	template: '<div><my-component v-ref:component></my-component></div>',
+	components: { myComponent: ComponentWithMocks },
+	store: new Vuex.Store(store)
+}).$mount()
+endsnippet
+
+snippet vxr
+import Vue from 'vue'
+import Vuex from 'vuex'
+import VueRouter from 'vue-router'
+import { store } from '../examples/store'
+
+Vue.use(VueRouter)
+Vue.use(Vuex)
+
+const mockedStore = store
+
+describe('User navigates to ${1:component}', () => {
+	let router, component, view
+
+	context('${2:context}', () => {
+		beforeEach(() => {
+			const inject = require('!!vue?inject!src/components/$1')
+			const ComponentWithMocks = inject({})
+
+			router = new VueRouter({ abstract: true })
+			const App = Vue.extend({
+				template: '<div><router-view v-ref:component></router-view></div>',
+				store: new Vuex.Store(mockedStore)
+			})
+
+			router.map({
+				'/component': {
+					component: ComponentWithMocks
+				}
+			})
+			router.start(App, document.createElement('div'))
+			router.go('/component')
+
+			component = router.app.$refs.component
+			view = router.app.$el
+		})
+
+		${0}
+	})
+})
+endsnippet

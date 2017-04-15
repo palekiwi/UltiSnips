@@ -1,0 +1,96 @@
+snippet desc "mocha describe"
+describe('$1', () => {
+	$0
+})
+endsnippet
+
+snippet context "mocha context"
+context('$1', () => {
+	$0
+})
+endsnippet
+
+snippet it "mocha it"
+it('$1', () => {
+	$0
+})
+endsnippet
+
+snippet exp "chai expect to.equal"
+expect($1).to.equal($0)
+endsnippet
+
+snippet exok "chai expect to.be.ok"
+expect($0).to.be.ok
+endsnippet
+
+snippet excon "chai expect to.contain"
+expect($1).to.contain($0)
+endsnippet
+
+snippet bef
+beforeEach(() => {
+	$0
+})
+endsnippet
+
+snippet aft
+afterEach(() => {
+	$0
+})
+endsnippet
+
+# AVA snippets
+snippet imt "import ava as test" b
+import test from 'ava'
+endsnippet
+
+snippet test "ava test" b
+test('$1', t => {
+	$0
+})
+endsnippet
+
+snippet tis "t.is()" b
+t.is($1, $2, '$0')
+endsnippet
+
+snippet tnot "t.not()" b
+t.not($1, $2, '$0')
+endsnippet
+
+snippet tde "t.deepEqual()" b
+t.deepEqual($1, $2, '$0')
+endsnippet
+
+snippet tnde "t.notDeepEqual()" b
+t.notDeepEqual($1, $2, '$0')
+endsnippet
+
+snippet te "t.end()" b
+t.end()
+endsnippet
+
+snippet ttr "t.true()" b
+t.true($1, '$0')
+endsnippet
+
+snippet tfa "t.false()" b
+t.false($1, '$0')
+endsnippet
+
+snippet tty "t.truthy()" b
+t.truthy($1, '$0')
+endsnippet
+
+snippet tfy "t.falsy()" b
+t.falsy($1, '$0')
+endsnippet
+
+snippet tth "t.throw()" b
+t.throw($1, $2, '$0')
+endsnippet
+
+snippet ttd "test.todo()" b
+test.todo('$1')
+endsnippet

@@ -1,0 +1,59 @@
+snippet html
+	<!DOCTYPE html>
+	<html>
+		<head>
+			<meta charset="utf-8">
+			<meta name="viewport" content="width=device-width">
+			<title>${1}</title>
+		</head>
+		<body>
+			${2:<div id="app"></div>}
+			<script src="/bundle.js"></script>
+		</body>
+	</html>
+endsnippet
+
+snippet scr:
+	<script src="${0}"></script>
+endsnippet
+
+snippet scr
+	<script>
+		${0}
+	</script>
+endsnippet
+
+snippet mnt
+	<script>
+		export default {
+			mounted () {
+				${0}
+			}
+		}
+	</script>
+endsnippet
+
+snippet sty
+	<style lang="sass">
+	${0}
+	</style>
+endsnippet
+
+snippet tem
+	<template lang="pug">
+		${0}
+	</template>
+endsnippet
+
+snippet vbtn
+	<button
+		class="btn btn-${1}"
+		${2}
+	>
+	${0}
+	</button>
+endsnippet
+
+snippet hc
+	<!-- ${1} -->
+endsnippet

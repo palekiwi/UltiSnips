@@ -1,0 +1,137 @@
+snippet us "use strict" b
+'use strict'
+endsnippet
+
+snippet iife
+(function() {
+	'use strict'
+
+	${1}
+}())
+endsnippet
+
+snippet cre "create element"
+document.createElement('${1}')
+endsnippet
+
+snippet ach "append child"
+${1:document.body}.appendChild($2)
+endsnippet
+
+snippet ael "addEventListener()" w
+addEventListener('$1', $2)
+endsnippet
+
+snippet ede "export default" b
+export default $1
+endsnippet
+
+snippet edo "export default object"
+export default {
+	$0
+}
+endsnippet
+
+snippet edf "export default function"
+export default function $1 ($2) {
+	$0
+}
+endsnippet
+
+snippet exf "export function"
+export function $1 ($2) {
+	$0
+}
+endsnippet
+
+snippet exc "export constant"
+export const $1 = "$1"
+endsnippet
+
+snippet ip "interpolate string" w
+\`${1:}${$2}\`
+endsnippet
+
+snippet em "${}" w
+${${0}}
+endsnippet
+
+#declarations
+snippet cnst "constant = string"
+const $1 = '$1'
+endsnippet
+
+snippet const
+const $1 = $0
+endsnippet
+
+snippet let
+let $1 = $0
+endsnippet
+
+#functions
+snippet f "anonymous function" w
+function ($1) {
+	$0
+}
+endsnippet
+
+snippet fun "named function" w
+function $1 ($2) {
+	$0
+}
+endsnippet
+
+snippet af "arrow function" w
+($1) => {
+	$0
+}
+endsnippet
+
+snippet a "arrow function single line" w
+${1:()} => $0
+endsnippet
+
+snippet if
+if ($1) {
+	$0
+}
+endsnippet
+
+snippet i
+if ($1) $0
+endsnippet
+
+snippet met "create a class method"
+$1 ($2) {
+	$0
+}
+endsnippet
+
+snippet Prom "new Promise"
+new Promise ((resolve, reject) => {
+	$1
+})
+endsnippet
+
+snippet sT "setTimeout"
+setTimeout($0, $1)
+endsnippet
+
+snippet clo "console.log()"
+console.log($1)
+endsnippet
+
+snippet re
+const ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} = require('$1')
+endsnippet
+
+snippet ree
+const ${1:} = require('$1')
+endsnippet
+snippet qs "querySelector" w
+document.querySelector('$1')
+endsnippet
+snippet by# "getElementbyId" w
+document.getElementById('$1')
+endsnippet

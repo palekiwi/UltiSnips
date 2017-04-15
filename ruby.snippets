@@ -1,0 +1,36 @@
+# functions
+snippet each "each block" w
+each {|$1| $2}
+endsnippet
+
+snippet ed "each do" w
+each do |$1|
+	$2
+end
+endsnippet
+
+snippet md "map do" w
+map do |$1|
+	$2
+end
+endsnippet
+
+snippet ip "string interpolation" w
+"$1 #{$0}"
+endsnippet
+
+snippet guard:gem "guardfile rspec gem" b
+guard :rspec, cmd: 'rspec --color' do
+  watch(%r{^spec/.+_spec\.rb$})
+  watch(%r{^lib/(.+)\.rb$})     { |m| "spec/lib/#{m[1]}_spec.rb" }
+  watch('spec/spec_helper.rb')  { "spec" }
+end
+endsnippet
+
+snippet re "require ''" b
+require '$1'
+endsnippet
+
+snippet rel "require_relative ''" b
+require_relative '$1'
+endsnippet

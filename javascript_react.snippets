@@ -1,0 +1,64 @@
+snippet rea "import react" b
+import React from 'react'
+endsnippet
+
+snippet ren "import react render" b
+import {render} from 'react-dom'
+
+render(
+	${1:<div>React App</div>},
+	document.getElementById('app')
+)
+endsnippet
+
+# testing
+snippet renderIntoDocument "react renderIntoDocument"
+const component = renderIntoDocument(
+	$0
+)
+endsnippet
+
+snippet findDOMNode "react findDOMNode"
+const ${1:} = ReactDOM.findDOMNode(component.refs.$1)
+endsnippet
+
+snippet scry "react scryRenderedDOMComponentsWithClass"
+const $1 = scryRenderedDOMComponentsWithClass(${2:component}, '$0')
+endsnippet
+
+snippet reducer "react reducer" b
+import * as types from '${1:../constants/actionTypes.js}'
+
+const $2 = (state = $3, action) => {
+	switch (action.type) {
+		case $4:
+			return $5
+
+		default:
+			return state
+	}
+}
+
+export default $2
+endsnippet
+
+snippet connect "Redux connect" b
+import {connect} from 'react-redux'
+import {bindActionCreators} from 'redux'
+import * as actions from '../actions/$0'
+import  ${1:component name} from '../components/$1.js'
+
+function mapStateToProps (state, ownProps) {
+	return {
+		${2:propname}: state.$2
+	}
+}
+
+function mapDispatchToProps (dispatch) {
+	return bindActionCreators(actions, dispatch)
+}
+
+const ${3:filename} = connect(mapStateToProps, mapDispatchToProps)($1)
+
+export default $3
+endsnippet

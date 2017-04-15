@@ -1,0 +1,129 @@
+# globals
+snippet desc "describe block" b
+describe '$1' do
+	$0
+end
+endsnippet
+
+snippet ctx "context block" b
+context '$1' do
+	$0
+end
+endsnippet
+
+snippet it "it block" b
+it '$1' do
+	$0
+end
+endsnippet
+
+# matchers
+snippet eto "expect to" b
+expect($1).to $0
+endsnippet
+
+snippet ent "expect not to" b
+expect($1).not_to $0
+endsnippet
+
+snippet etequal "expect to equal (equal?)" b
+expect($1).to equal($0)
+endsnippet
+
+snippet etb "expect to be (equal?)" b
+expect($1).to be($0)
+endsnippet
+
+snippet ete "expect to eq (==)" b
+expect($1).to eq($0)
+endsnippet
+
+snippet eteql "expect to eq (eql?)" b
+expect($1).to eq($0)
+endsnippet
+
+
+snippet etm "expect to match" b
+expect($1).to match($0)
+endsnippet
+
+snippet etma "expect to match_array exactly" b
+expect($1).to match_array($0)
+endsnippet
+
+snippet eti "expect to include" b
+expect($1).to include($0)
+endsnippet
+
+#truthiness
+snippet etbt "expect to be true" b
+expect($1).to be true
+endsnippet
+
+snippet etbty "expect to be truthy" b
+expect($1).to be_truthy
+endsnippet
+
+snippet etbf "expect to be false" b
+expect($1).to be false
+endsnippet
+
+snippet etbfy "expect to be falsy" b
+expect($1).to be_falsy
+endsnippet
+
+snippet etbem "expect to be empty" b
+expect($1).to be_empty
+endsnippet
+
+snippet etbn "expect to be nil" b
+expect($1).to be_nil
+endsnippet
+
+snippet etbv "expect to be valid" b
+expect($1).to be_valid
+endsnippet
+
+snippet etresp "expect to respond to" b
+expect($1).to respond_to
+endsnippet
+
+# controller tests
+snippet etrto "expect to redirect to" b
+expect(response).to redirect_to
+endsnippet
+
+snippet etrte "expect to render_template" b
+expect(response).to render_template $1
+endsnippet
+
+snippet ethhs "expect to have http status" b
+expect(response).to have_http_status $1
+endsnippet
+
+# errors
+snippet etre "expect to raise error" b
+expect($1).to raise_error($0)
+endsnippet
+
+snippet conf-datc "configure DatabaseCleaner"
+config.before(:suite) do
+	DatabaseCleaner.clean_with(:truncation)
+end
+
+config.before(:each) do
+	DatabaseCleaner.strategy = :transaction
+end
+
+config.before(:each, :js => true) do
+	DatabaseCleaner.strategy = :truncation
+end
+
+config.before(:each) do
+	DatabaseCleaner.start
+end
+
+config.after(:each) do
+	DatabaseCleaner.clean
+end
+endsnippet
