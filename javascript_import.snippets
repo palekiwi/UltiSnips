@@ -2,8 +2,16 @@ snippet im
 import ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} from '$1'
 endsnippet
 
+snippet imc
+import ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/\u$2(?4:\u$4)/} from '$1'
+endsnippet
+
 snippet imn "named import"
-import {$2} from '$1'
+import { $2 } from '$1'
+endsnippet
+
+snippet imui
+import ${1/(\w*)/\u$1/} from 'muicss/lib/react/$1'
 endsnippet
 
 snippet d3 "import d3"

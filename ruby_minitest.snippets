@@ -1,0 +1,99 @@
+#setup
+snippet tc "minitest case" b
+require 'minitest/autorun'
+
+class $1 < MiniTest::Test
+	$0
+end
+endsnippet
+
+snippet ts "def test_"
+def test_$1
+	$2
+end
+endsnippet
+
+snippet test "minitest rails step"
+test "$1" do
+	$2
+end
+endsnippet
+
+#assertions
+snippet aseq "assert equal"
+assert_equal $1, $2
+endsnippet
+
+snippet asno "assert not"
+assert_not $1
+endsnippet
+
+snippet asnil "assert nil"
+assert_nil $1
+endsnippet
+
+snippet asval "assert valid"
+assert $1.valid?
+endsnippet
+
+snippet asnval "assert not valid"
+assert_not $1.valid?
+endsnippet
+
+snippet asem "assert empty"
+assert_empty $1
+endsnippet
+
+snippet asei "assert includes"
+assert_includes $1
+endsnippet
+
+snippet asma "assert match"
+assert_match $1
+endsnippet
+
+snippet asse "assert select"
+assert_select $1, $2
+endsnippet
+
+snippet aste "assert template"
+assert_template $1
+endsnippet
+
+snippet asid "assert in delta"
+assert_in_delta $1, $2
+endsnippet
+
+snippet asresto "assert respond to"
+assert_respond_to $1, $2
+endsnippet
+
+#integration
+snippet asdiff "assert difference"
+assert_difference '$1', $2 do
+	$3
+end
+endsnippet
+
+snippet astem "assert template"
+assert_template $1
+endsnippet
+
+snippet asredto "assert redirected_to"
+assert_redirected_to $1
+endsnippet
+
+snippet fored "follow_redirect!"
+follow_redirect!
+endsnippet
+
+snippet asndiff "assert no difference"
+assert_no_difference '$1' do
+	$2
+end
+endsnippet
+
+#exceptions
+snippet asra "assert raises"
+assert_raises($1) { $2 }
+endsnippet

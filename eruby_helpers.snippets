@@ -1,7 +1,10 @@
 snippet ff "form_for" b
 <%= form_for($1) do |f| %>
-	<%= f.label $4 %>
-	<%= f.$5 $4, class: $6 %>
+	<div>
+		<%= f.label $4 %>
+		<%= f.$5 $4, class: $6 %>
+	</div>
+
 	<%= f.submit $2, class: $3 %>
 <% end %>
 endsnippet

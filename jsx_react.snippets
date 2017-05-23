@@ -72,7 +72,8 @@ export default connect(mapStateToProps, mapDispatchToProps)($1)
 endsnippet
 
 snippet stfc "stateless functional component"
-import React, {PropTypes} from 'react'
+import React from 'react'
+import PropTypes from 'prop-types'
 
 $1.propTypes = {
 	${2}: PropTypes.${3:string}.isRequired
@@ -138,6 +139,5 @@ snippet t "jsx tag"
 endsnippet
 
 snippet ts "self-closing tag" b
-<$1
-	$2={$3}/>
+<$1 />
 endsnippet
