@@ -1,43 +1,16 @@
+### SETUP ###
+snippet desc "jest describe" b
+describe('$1', () => {
+	$0
+})
+endsnippet
+
 snippet it "jest it" b
 it('$1', () => {
 	$0
 })
 endsnippet
 
-### MATCHERS ###
-snippet etb "expect().toBe()" b
-expect($1).toBe($0)
-endsnippet
-
-snippet ete "expect().toEqual()" b
-expect($1).toEqual($0)
-endsnippet
-
-snippet etbt "expect().toBeTruthy()" b
-expect($1).toBeTruthy()
-endsnippet
-
-snippet etbf "expect().toBeFalsy()" b
-expect($1).toBeFalsy()
-endsnippet
-
-snippet etbn "expect().toBeNull()" b
-expect($1).toBeNull()
-endsnippet
-
-snippet etm "expect().toMatch()" b
-expect($1).toMatch($0)
-endsnippet
-
-snippet etc "expect().toContain()" b
-expect($1).toContain($0)
-endsnippet
-
-snippet etth "expect().toThrow()" b
-expect($1).toThrow($0)
-endsnippet
-
-### SETUP ###
 snippet befe "beforeEach()" b
 beforeEach(() => {
 	$0
@@ -62,11 +35,39 @@ afterAll(() => {
 })
 endsnippet
 
-snippet desc "describe" b
-describe('$1', () => {
-	$0
-})
+### MATCHERS ###
+snippet extb "expect().toBe()" b
+expect($1).toBe($0)
 endsnippet
+
+snippet exte "expect().toEqual()" b
+expect($1).toEqual($0)
+endsnippet
+
+snippet extbt "expect().toBeTruthy()" b
+expect($1).toBeTruthy()
+endsnippet
+
+snippet extbf "expect().toBeFalsy()" b
+expect($1).toBeFalsy()
+endsnippet
+
+snippet extbn "expect().toBeNull()" b
+expect($1).toBeNull()
+endsnippet
+
+snippet extm "expect().toMatch()" b
+expect($1).toMatch($0)
+endsnippet
+
+snippet extc "expect().toContain()" b
+expect($1).toContain($0)
+endsnippet
+
+snippet extth "expect().toThrow()" b
+expect($1).toThrow($0)
+endsnippet
+
 
 ### MOCKING ###
 snippet mrv "mockReturnValue" w
