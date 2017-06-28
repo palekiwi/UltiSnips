@@ -1,0 +1,310 @@
+snippet bucard "bulma card" b
+<div class="card">
+  <header class="card-header">
+    <p class="card-header-title">
+      $1
+    </p>
+    <a class="card-header-icon">
+      <span class="icon">
+        <i class="$2"></i>
+      </span>
+    </a>
+  </header>
+  <div class="card-content">
+    <div class="content">
+			$3
+    </div>
+  </div>
+  <footer class="card-footer">
+    <a class="card-footer-item">$4</a>
+  </footer>
+</div>
+endsnippet
+
+snippet bunav "bulma nav" b
+<nav class="nav">
+  <div class="nav-left">
+    <a class="nav-item">
+      <img src="http://bulma.io/images/bulma-logo.png" alt="Bulma logo">
+    </a>
+  </div>
+
+  <div class="nav-center">
+    <a class="nav-item">
+      <span class="icon">
+        <i class="fa fa-github"></i>
+      </span>
+    </a>
+    <a class="nav-item">
+      <span class="icon">
+        <i class="fa fa-twitter"></i>
+      </span>
+    </a>
+  </div>
+
+  <!-- This "nav-toggle" hamburger menu is only visible on mobile -->
+  <!-- You need JavaScript to toggle the "is-active" class on "nav-menu" -->
+  <span class="nav-toggle">
+    <span></span>
+    <span></span>
+    <span></span>
+  </span>
+
+  <!-- This "nav-menu" is hidden on mobile -->
+  <!-- Add the modifier "is-active" to display it on mobile -->
+  <div class="nav-right nav-menu">
+    <a class="nav-item">
+      Home
+    </a>
+    <a class="nav-item">
+      Documentation
+    </a>
+    <a class="nav-item">
+      Blog
+    </a>
+
+    <div class="nav-item">
+      <div class="field is-grouped">
+        <p class="control">
+          <a class="button" >
+            <span class="icon">
+              <i class="fa fa-twitter"></i>
+            </span>
+            <span>Tweet</span>
+          </a>
+        </p>
+        <p class="control">
+          <a class="button is-primary">
+            <span class="icon">
+              <i class="fa fa-download"></i>
+            </span>
+            <span>Download</span>
+          </a>
+        </p>
+      </div>
+    </div>
+  </div>
+</nav>
+endsnippet
+
+snippet bupagination "bulma pagination" b
+<nav class="pagination">
+  <a class="pagination-previous">Previous</a>
+  <a class="pagination-next">Next page</a>
+  <ul class="pagination-list">
+    <li>
+      <a class="pagination-link">1</a>
+    </li>
+    <li>
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+    <li>
+      <a class="pagination-link">45</a>
+    </li>
+    <li>
+      <a class="pagination-link is-current">46</a>
+    </li>
+    <li>
+      <a class="pagination-link">47</a>
+    </li>
+    <li>
+      <span class="pagination-ellipsis">&hellip;</span>
+    </li>
+    <li>
+      <a class="pagination-link">86</a>
+    </li>
+  </ul>
+</nav>
+endsnippet
+
+snippet bupanel "bulma panel" b
+<nav class="panel">
+  <p class="panel-heading">
+    Repositories
+  </p>
+  <div class="panel-block">
+    <p class="control has-icons-left">
+      <input class="input is-small" type="text" placeholder="Search">
+      <span class="icon is-small is-left">
+        <i class="fa fa-search"></i>
+      </span>
+    </p>
+  </div>
+  <p class="panel-tabs">
+    <a class="is-active">All</a>
+    <a>Public</a>
+    <a>Private</a>
+    <a>Sources</a>
+    <a>Forks</a>
+  </p>
+  <a class="panel-block is-active">
+    <span class="panel-icon">
+      <i class="fa fa-book"></i>
+    </span>
+    bulma
+  </a>
+  <a class="panel-block">
+    <span class="panel-icon">
+      <i class="fa fa-book"></i>
+    </span>
+    marksheet
+  </a>
+  <label class="panel-block">
+    <input type="checkbox">
+    Remember me
+  </label>
+  <div class="panel-block">
+    <button class="button is-primary is-outlined is-fullwidth">
+      Reset all filters
+    </button>
+  </div>
+</nav>
+endsnippet
+
+snippet bumodal "bulma modal" b
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-content">
+    <!-- Any other Bulma elements you want -->
+  </div>
+  <button class="modal-close"></button>
+</div>
+endsnippet
+
+snippet bumodalcard "bulma modal card" b
+<div class="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title">Modal title</p>
+      <button class="delete"></button>
+    </header>
+    <section class="modal-card-body">
+      <!-- Content ... -->
+    </section>
+    <footer class="modal-card-foot">
+      <a class="button is-success">Save changes</a>
+      <a class="button">Cancel</a>
+    </footer>
+  </div>
+</div>
+endsnippet
+
+snippet bumessage "bulma message" b
+article class="message">
+  <div class="message-header">
+    <p>Hello World</p>
+    <button class="delete"></button>
+  </div>
+  <div class="message-body">
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. <strong>Pellentesque risus mi</strong>, tempus quis placerat ut, porta nec nulla. Vestibulum rhoncus ac ex sit amet fringilla. Nullam gravida purus diam, et dictum <a>felis venenatis</a> efficitur. Aenean ac <em>eleifend lacus</em>, in mollis lectus. Donec sodales, arcu et sollicitudin porttitor, tortor urna tempor ligula, id porttitor mi magna a neque. Donec dui urna, vehicula et sem eget, facilisis sodales sem.
+  </div>
+</article>
+endsnippet
+
+snippet bumenu "bulma menu" b
+<aside class="menu">
+  <p class="menu-label">
+    General
+  </p>
+  <ul class="menu-list">
+    <li><a>Dashboard</a></li>
+    <li><a>Customers</a></li>
+  </ul>
+  <p class="menu-label">
+    Administration
+  </p>
+  <ul class="menu-list">
+    <li><a>Team Settings</a></li>
+    <li>
+      <a class="is-active">Manage Your Team</a>
+      <ul>
+        <li><a>Members</a></li>
+        <li><a>Plugins</a></li>
+        <li><a>Add a member</a></li>
+      </ul>
+    </li>
+    <li><a>Invitations</a></li>
+    <li><a>Cloud Storage Environment Settings</a></li>
+    <li><a>Authentication</a></li>
+  </ul>
+  <p class="menu-label">
+    Transactions
+  </p>
+  <ul class="menu-list">
+    <li><a>Payments</a></li>
+    <li><a>Transfers</a></li>
+    <li><a>Balance</a></li>
+  </ul>
+</aside>
+endsnippet
+
+snippet bumedia "bulma media" b
+<article class="media">
+  <figure class="media-left">
+    <p class="image is-64x64">
+      <img src="http://bulma.io/images/placeholders/128x128.png">
+    </p>
+  </figure>
+  <div class="media-content">
+    <div class="content">
+      <p>
+        <strong>John Smith</strong> <small>@johnsmith</small> <small>31m</small>
+        <br>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin ornare magna eros, eu pellentesque tortor vestibulum ut. Maecenas non massa sem. Etiam finibus odio quis feugiat facilisis.
+      </p>
+    </div>
+    <nav class="level is-mobile">
+      <div class="level-left">
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-reply"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-retweet"></i></span>
+        </a>
+        <a class="level-item">
+          <span class="icon is-small"><i class="fa fa-heart"></i></span>
+        </a>
+      </div>
+    </nav>
+  </div>
+  <div class="media-right">
+    <button class="delete"></button>
+  </div>
+</article>
+endsnippet
+
+snippet bulevel "bulma level" b
+<!-- Main container -->
+<nav class="level">
+  <!-- Left side -->
+  <div class="level-left">
+    <div class="level-item">
+      <p class="subtitle is-5">
+        <strong>123</strong> posts
+      </p>
+    </div>
+    <div class="level-item">
+      <div class="field has-addons">
+        <p class="control">
+          <input class="input" type="text" placeholder="Find a post">
+        </p>
+        <p class="control">
+          <button class="button">
+            Search
+          </button>
+        </p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Right side -->
+  <div class="level-right">
+    <p class="level-item"><strong>All</strong></p>
+    <p class="level-item"><a>Published</a></p>
+    <p class="level-item"><a>Drafts</a></p>
+    <p class="level-item"><a>Deleted</a></p>
+    <p class="level-item"><a class="button is-success">New</a></p>
+  </div>
+</nav>
+endsnippet

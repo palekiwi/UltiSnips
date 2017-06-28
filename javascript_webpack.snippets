@@ -1,65 +1,65 @@
-snippet wpconf "webpack.config" b
-const webpack = require('webpack')
-const path = require('path')
+snippet webpack-basic "webpack basic setup" b
+const path = require('path');
+const webpack = require('webpack');
 
-module.exports = {
-  //debug: true,
-  //noInfo: true,
-  devtool: 'cheap-module-source-map',
-  entry: [
-    'webpack-hot-middleware/client?reload=true',
-    './src/index.js'
-  ],
-  target: 'web',
+const config = {
+  devtool: 'cheap-eval-source-map',
+  context: path.resolve(__dirname, '${1:src}'),
+  entry: {
+    vendor:[$2],
+    ${3:app}: './$3.js'
+  },
   output: {
-    path: __dirname + '/dist',
-    publicPath: '/',
-    filename: 'bundle.js'
+    path: path.resolve(__dirname, '${4:dist}'),
+    filename: '[name].bundle.js',
   },
-  devServer: {
-    contentBase: './src'
-  },
-  plugins: [
-    new webpack.HotModuleReplacementPlugin()
-  ],
-  module: {
-    loaders: [
-      {test: /\.jsx?$/, exclude: /node_modules/, loader: 'babel-loader'},
-      {test: /\.scss$/, loaders: ['style-loader', 'css-loader', 'sass-loader']},
-      {test: /\.woff2?$|\.ttf$|\.eot$|\.svg$/, loader: "file-loader"}
-    ]
-  }
+	resolve: {
+		extensions: ['.js']
+	},
+	module: {
+		rules: []
+	},
+	plugins: [
+		new webpack.optimize.CommonsChunkPlugin({
+			name: 'vendor'
+		})
+	]
+};
+
+module.exports = config;
+endsnippet
+
+snippet webpack-babel "webpack babel-loader"
+{
+	test: /\.jsx?$/,
+	use: [
+		{loader: 'eslint-loader'},
+		{loader: 'babel-loader'}
+	],
+	exclude: /node_modules/
 }
 endsnippet
 
-snippet srcServer "webpack-express server" b
-const express = require('express')
-const webpack = require('webpack')
-const path = require('path')
-const config = require('../webpack.config.dev.js')
+snippet webpack-sass "webpack with sass loaders"
+{
+	test: /.(scss|sass)$/,
+	use: [
+		{loader: 'style-loader'},
+		{loader: 'css-loader'},
+		{loader: 'sass-loader'}
+	]
+}
+endsnippet
 
-/* eslint-disable no-console */
-
-const port = 3000
-const app = express()
-const compiler = webpack(config)
-
-app.use(require('webpack-dev-middleware')(compiler, {
-  noInfo: true,
-  publicPath: config.output.publicPath
-}))
-
-app.use(require('webpack-hot-middleware')(compiler))
-
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../src/index.html'))
-})
-
-app.listen(port, (err) => {
-  if (err) {
-    console.log(err)
-  } else {
-    console.log(`Server started on port ${port}`)
-  }
-})
+snippet webpack-fontawesome "webpack fontawesome loaders"
+{
+	test: /\.woff2?(\?v=[0-9]\.[0-9]\.[0-9])?$/,
+	// Limiting the size of the woff fonts breaks font-awesome ONLY for the extract text plugin
+	// loader: "url?limit=10000"
+	use: "url-loader"
+},
+{
+	test: /\.(ttf|eot|svg)(\?[\s\S]+)?$/,
+	use: 'file-loader'
+}
 endsnippet

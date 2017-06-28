@@ -1,3 +1,11 @@
-snippet fcconfig "config factory_girl" b
+snippet factory_girl-config "config factory_girl" b
 config.include FactoryGirl::Syntax::Methods
+endsnippet
+
+snippet factory "define a factory" b
+FactoryGirl.define do
+	factory $1 do
+		$0
+	end
+end
 endsnippet

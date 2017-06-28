@@ -1,10 +1,10 @@
 snippet us "use strict" b
-'use strict'
+'use strict';
 endsnippet
 
 snippet iife
 (function() {
-	'use strict'
+	'use strict';
 
 	${1}
 }())
@@ -111,27 +111,39 @@ endsnippet
 snippet Prom "new Promise"
 new Promise ((resolve, reject) => {
 	$1
-})
+});
 endsnippet
 
 snippet sT "setTimeout"
-setTimeout($0, $1)
+setTimeout($0, $1);
 endsnippet
 
 snippet clo "console.log()"
-console.log($1)
+console.log($1);
 endsnippet
 
 snippet re
-const ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} = require('$1')
+const ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} = require('$1');
 endsnippet
 
 snippet ree
-const ${1:} = require('$1')
+const ${1:} = require('$1');
 endsnippet
+
 snippet qs "querySelector" w
 document.querySelector('$1')
 endsnippet
+
 snippet by# "getElementbyId" w
 document.getElementById('$1')
+endsnippet
+
+snippet by. "getElementsByClassName" w
+document.getElementsByClassName('$1')
+endsnippet
+
+snippet dcl "DOMContentLoaded" b
+document.addEventListener('DOMContentLoaded', function () {
+	$1
+});
 endsnippet

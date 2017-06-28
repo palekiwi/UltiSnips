@@ -2,78 +2,78 @@
 snippet desc "jest describe" b
 describe('$1', () => {
 	$0
-})
+});
 endsnippet
 
 snippet it "jest it" b
 it('$1', () => {
 	$0
-})
+});
 endsnippet
 
 snippet befe "beforeEach()" b
 beforeEach(() => {
 	$0
-})
+});
 endsnippet
 
 snippet afte "afterEach()" b
 afterEach(() => {
 	$0
-})
+});
 endsnippet
 
 snippet befa "beforeAll()" b
 beforeAll(() => {
 	$0
-})
+});
 endsnippet
 
 snippet afta "afterAll()" b
 afterAll(() => {
 	$0
-})
+});
 endsnippet
 
 ### MATCHERS ###
 snippet extb "expect().toBe()" b
-expect($1).toBe($0)
+expect($1).toBe($0);
 endsnippet
 
 snippet exte "expect().toEqual()" b
-expect($1).toEqual($0)
+expect($1).toEqual($0);
 endsnippet
 
 snippet extbt "expect().toBeTruthy()" b
-expect($1).toBeTruthy()
+expect($1).toBeTruthy();
 endsnippet
 
 snippet extbf "expect().toBeFalsy()" b
-expect($1).toBeFalsy()
+expect($1).toBeFalsy();
 endsnippet
 
 snippet extbn "expect().toBeNull()" b
-expect($1).toBeNull()
+expect($1).toBeNull();
 endsnippet
 
 snippet extm "expect().toMatch()" b
-expect($1).toMatch($0)
+expect($1).toMatch($0);
 endsnippet
 
 snippet extc "expect().toContain()" b
-expect($1).toContain($0)
+expect($1).toContain($0);
 endsnippet
 
 snippet extth "expect().toThrow()" b
-expect($1).toThrow($0)
+expect($1).toThrow($0);
 endsnippet
 
 
 ### MOCKING ###
 snippet mrv "mockReturnValue" w
-mockReturnValue($1)
+mockReturnValue($1);
 endsnippet
 
 snippet mrvo "mockReturnValueOnce" w
-mockReturnValueOnce($1)
+mockReturnValueOnce($1);
 endsnippet
