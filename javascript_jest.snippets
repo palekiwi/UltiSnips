@@ -17,7 +17,7 @@ beforeEach(() => {
 });
 endsnippet
 
-snippet afte "afterEach()" b
+snippet afe "afterEach()" b
 afterEach(() => {
 	$0
 });
@@ -29,19 +29,32 @@ beforeAll(() => {
 });
 endsnippet
 
-snippet afta "afterAll()" b
+snippet afa "afterAll()" b
 afterAll(() => {
 	$0
 });
 endsnippet
 
 ### MATCHERS ###
-snippet extb "expect().toBe()" b
+snippet extb "expect().toBe() ===" b
 expect($1).toBe($0);
 endsnippet
 
-snippet exte "expect().toEqual()" b
+snippet exte "expect().toEqual() object value" b
 expect($1).toEqual($0);
+endsnippet
+
+## Truthiness
+snippet extbn "expect().toBeNull()" b
+expect($1).toBeNull();
+endsnippet
+
+snippet extbu "expect().toBeUndefined()" b
+expect($1).toBeUndefined();
+endsnippet
+
+snippet extbd "expect().toBeDefined()" b
+expect($1).toBeDefined();
 endsnippet
 
 snippet extbt "expect().toBeTruthy()" b
@@ -51,29 +64,78 @@ endsnippet
 snippet extbf "expect().toBeFalsy()" b
 expect($1).toBeFalsy();
 endsnippet
+##
 
-snippet extbn "expect().toBeNull()" b
-expect($1).toBeNull();
+## Numbers
+snippet extbgt "expect().toBeGreaterThan()" b
+expect($1).toBeGreaterThan();
 endsnippet
 
+snippet extbgtoe "expect().toBeGreaterThanOrEqual()" b
+expect($1).toBeGreaterThanOrEqual();
+endsnippet
+
+snippet extblt "expect().toBeLessThan()" b
+expect($1).toBeLessThan();
+endsnippet
+
+snippet extbltoe "expect().toBeLessThanOrEqual()" b
+expect($1).toBeLessThanOrEqual();
+endsnippet
+
+snippet extbct "expect().toBeCloseTo()" b
+expect($1).toBeCloseTo();
+endsnippet
+##
+
+## Strings
 snippet extm "expect().toMatch()" b
 expect($1).toMatch($0);
 endsnippet
+##
 
+## Arrays
 snippet extc "expect().toContain()" b
 expect($1).toContain($0);
 endsnippet
+##
 
+## Exceptions
 snippet extth "expect().toThrow()" b
 expect($1).toThrow($0);
 endsnippet
+##
+## Snapshots
+snippet extms "expect().toMatchSnapshot()" b
+expect(tree).toMatchSnapshot();
+endsnippet
+##
 
+## Mocked functions
+snippet extbc "expect().toBeCalled()" b
+expect($1).toBeCalled($0);
+endsnippet
 
-### MOCKING ###
-snippet mrv "mockReturnValue" w
+snippet extbcw "expect().toBeCalledWith()" b
+expect($1).toBeCalledWith($0);
+endsnippet
+
+snippet exlcw "expect().lastCalledWith()" b
+expect($1).lastCalledWith($0);
+endsnippet
+##
+###
+
+### MOCKS ###
+snippet mock "jest.fn()" b
+const $1 = jest.fn();
+endsnippet
+
+snippet mockrv "mockReturnValue" w
 mockReturnValue($1);
 endsnippet
 
-snippet mrvo "mockReturnValueOnce" w
+snippet mockrvo "mockReturnValueOnce" w
 mockReturnValueOnce($1);
 endsnippet
+###

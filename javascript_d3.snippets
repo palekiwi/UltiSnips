@@ -1,0 +1,26 @@
+snippet dt "d3." w
+d3.
+endsnippet
+
+# array
+snippet dtr "d3.range()" w
+d3.range($1)
+endsnippet
+
+snippet dtex "d3.extent()" w
+d3.extent($1)
+endsnippet
+
+# shapes
+snippet dtl "d3.line()" w
+d3.line()
+	.x($1)
+	.y($2)
+endsnippet
+
+# scale
+snippet dts "d3.scale???()" w
+d3.scale$1()
+	.domain($2)
+	.range($3)
+endsnippet

@@ -45,7 +45,7 @@ export function $1 ($2) {
 endsnippet
 
 snippet exc "export constant"
-export const $1 = "$1"
+export const $1 = "$1";
 endsnippet
 
 snippet ip "interpolate string" w
@@ -58,15 +58,15 @@ endsnippet
 
 #declarations
 snippet cnst "constant = string"
-const $1 = '$1'
+const $1 = '$1';
 endsnippet
 
-snippet const
-const $1 = $0
+snippet c "constant = ;"
+const $1 = $0;
 endsnippet
 
 snippet let
-let $1 = $0
+let $1 = $0;
 endsnippet
 
 #functions
@@ -146,4 +146,8 @@ snippet dcl "DOMContentLoaded" b
 document.addEventListener('DOMContentLoaded', function () {
 	$1
 });
+endsnippet
+
+snippet # "id=" w
+id="$1"
 endsnippet

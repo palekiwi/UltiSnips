@@ -16,6 +16,11 @@ const config = {
 	resolve: {
 		extensions: ['.js']
 	},
+  devServer: {
+    contentBase: path.join(__dirname, '$4'),
+    compress: true,
+    port: 3000
+  },
 	module: {
 		rules: []
 	},

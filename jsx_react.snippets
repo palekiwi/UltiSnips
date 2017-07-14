@@ -1,27 +1,21 @@
 # component
-snippet comp "react component"
-import React from 'react'
+snippet recomp "react component"
+import React from 'react';
 
-export default class $1 extends React.Component {
-	static propTypes = {
-		$2: React.PropTypes.${3:object}.isRequired
-	}
-
-	static defaultProps = {
-		$2: $4
-	}
-
+class $1 extends React.Component {
 	render () {
 		return (
 			${0}
-		)
+		);
 	}
 }
+
+export default $1;
 endsnippet
 
 snippet comp-sc "shallow component"
-import React from 'react'
-import shallowCompare from 'react-addons-shallow-compare'
+import React from 'react';
+import shallowCompare from 'react-addons-shallow-compare';
 
 class ${1:} extends React.Component {
 	shouldComponentUpdate (nextProps, nextState) {
@@ -30,7 +24,7 @@ class ${1:} extends React.Component {
 	render () {
 		return (
 			${0}
-		)
+		);
 	}
 }
 
@@ -72,12 +66,12 @@ export default connect(mapStateToProps, mapDispatchToProps)($1)
 endsnippet
 
 snippet stfc "stateless functional component"
-import React from 'react'
-import PropTypes from 'prop-types'
+import React from 'react';
+import PropTypes from 'prop-types';
 
 $1.propTypes = {
 	${2}: PropTypes.${3:string}.isRequired
-}
+};
 
 function $1 (${4}) {
 	return (
@@ -86,34 +80,40 @@ function $1 (${4}) {
 }
 
 
-export default $1
+export default $1;
 endsnippet
 
 snippet con "react component constructor"
 constructor (props) {
-	super(props)
+	super(props);
 	${0}
 }
 endsnippet
 
 snippet bnd "bind method to this"
-this.${1:} = this.$1.bind(this)
+this.${1:} = this.$1.bind(this);
 endsnippet
 
 ## lifecycle
-snippet mount "react componentDidMount"
+snippet recdm "react componentDidMount"
 componentDidMount () {
 	${0}
 }
 endsnippet
 
-snippet unmount "React componentWillUnmount"
+snippet recdup "react componentDidUpdate"
+componentDidUpdate () {
+	${0}
+}
+endsnippet
+
+snippet recwu "React componentWillUnmount"
 componentWillUnmount () {
 	${0}
 }
 endsnippet
 
-snippet recprops "React componentWillReceiveProps"
+snippet recwrp "React componentWillReceiveProps"
 componentWillReceiveProps (nextProps) {
 	if (this.props.$1.$2 !== nextProps.$1.$2) {
 		this.setState({$1: Object.assign({}, nextProps.$1)})
@@ -121,17 +121,13 @@ componentWillReceiveProps (nextProps) {
 }
 endsnippet
 
-snippet pty "React set props types"
+snippet rept "React set props types"
 $1.propTypes = {
 	${2:}: PropTypes.${3:object}.isRequired
-}
+};
 endsnippet
 
 # JSX
-snippet cn "className"
-className="${0}"
-endsnippet
-
 snippet t "jsx tag"
 <${1:div}>
 	$0
@@ -140,4 +136,14 @@ endsnippet
 
 snippet ts "self-closing tag" b
 <$1 />
+endsnippet
+
+snippet reprops "react props"
+static propTypes = {
+	$1: React.PropTypes.${2:object}.isRequired
+},
+
+static defaultProps = {
+	$1: $3
+}
 endsnippet
