@@ -76,7 +76,7 @@ $1.propTypes = {
 function $1 (${4}) {
 	return (
 		${0}
-	)
+	);
 }
 
 
@@ -95,29 +95,42 @@ this.${1:} = this.$1.bind(this);
 endsnippet
 
 ## lifecycle
+#mounting
 snippet recdm "react componentDidMount"
 componentDidMount () {
 	${0}
 }
 endsnippet
 
-snippet recdup "react componentDidUpdate"
-componentDidUpdate () {
+#updating
+snippet recwrp "react componentWillReceiveProps"
+componentWillReceiveProps (nextProps) {
 	${0}
 }
 endsnippet
 
+snippet reshcu "react shouldComponentUpdate"
+shouldComponentUpdate (nextProps, nextState) {
+	${0}
+}
+endsnippet
+
+snippet recwup "react componentWillUpdate"
+componentWillUpdate (nextProps, nextState) {
+	${0}
+}
+endsnippet
+
+snippet recdup "react componentDidUpdate"
+componentDidUpdate (prevProps, prevState) {
+	${0}
+}
+endsnippet
+
+#unmounting
 snippet recwu "React componentWillUnmount"
 componentWillUnmount () {
 	${0}
-}
-endsnippet
-
-snippet recwrp "React componentWillReceiveProps"
-componentWillReceiveProps (nextProps) {
-	if (this.props.$1.$2 !== nextProps.$1.$2) {
-		this.setState({$1: Object.assign({}, nextProps.$1)})
-	}
 }
 endsnippet
 
@@ -146,4 +159,8 @@ static propTypes = {
 static defaultProps = {
 	$1: $3
 }
+endsnippet
+
+snippet reref "ref={}" w
+ref={c => this.$1 = c}
 endsnippet

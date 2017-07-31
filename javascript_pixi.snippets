@@ -1,0 +1,41 @@
+snippet pixi "import * as PIXI" b
+import * as PIXI from 'pixi.js';
+endsnippet
+
+# aliases
+snippet piUtils "utils" b
+const utils = PIXI.utils;
+endsnippet
+
+snippet piRenderer "renderer" b
+const renderer = PIXI.autoDetectRenderer(${1:640, 480});
+endsnippet
+
+snippet piApplication "Application" b
+const app = new PIXI.Application(${1:640, 480});
+$2.appendChild(app.view);
+endsnippet
+
+snippet piAddChild "app.stage.addChild()"
+app.stage.addChild($1);
+endsnippet
+
+snippet piTexture "TextureCache" b
+const TextureCache = PIXI.utils.TextureCache;
+endsnippet
+
+snippet piLoader "loader" b
+const loader = PIXI.loader;
+endsnippet
+
+snippet piContainer "Container" b
+const Container = PIXI.Container;
+endsnippet
+
+snippet piSprite "Sprite" b
+const Sprite = PIXI.Sprite;
+endsnippet
+
+snippet piResources "loader.resources" b
+const resources = PIXI.loader.resources;
+endsnippet

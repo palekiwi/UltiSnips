@@ -1,4 +1,4 @@
-snippet imv
+snippet vue
 import Vue from 'vue'
 endsnippet
 
@@ -8,13 +8,25 @@ export const ${1} = (${2}) => {
 }
 endsnippet
 
-snippet cdat
+snippet vudat
 data () {
 	return {
 		${1}: ${0}
 	}
 }
 endsnippet
+
+snippet vucomp "vue component" b
+<template>
+</template>
+
+<script>
+</script>
+
+<style>
+</style>
+endsnippet
+
 
 # component testing
 snippet vmou
