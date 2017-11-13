@@ -1,6 +1,7 @@
 # component
 snippet recomp "react component"
 import React from 'react';
+import PropTypes from 'prop-types';
 
 class $1 extends React.Component {
 	render () {
@@ -9,6 +10,10 @@ class $1 extends React.Component {
 		);
 	}
 }
+
+$1.propTypes = {
+	${2}: PropTypes.${3:string}.isRequired
+};
 
 export default $1;
 endsnippet
@@ -92,6 +97,12 @@ endsnippet
 
 snippet bnd "bind method to this"
 this.${1:} = this.$1.bind(this);
+endsnippet
+
+snippet rem "component method" b
+$1 ($2) {
+	$0
+}
 endsnippet
 
 ## lifecycle
