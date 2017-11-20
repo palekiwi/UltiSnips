@@ -1,5 +1,7 @@
 snippet mod "module where" b
-module $1 where
+module `!p snip.rv = re.sub(r'\.hs$', '', fn)` where
+
+$0
 endsnippet
 
 snippet d "function definition" b
@@ -28,37 +30,41 @@ snippet com "comprehension"
 endsnippet
 
 # infix operators
-snippet m "<$>"
+snippet m "<$>" w
 <$> $1
 endsnippet
 
-snippet a "<*>"
+snippet a "<*>" w
 <*> $1
 endsnippet
 
-snippet b ">>="
-<*> $1
+snippet b ">>=" w
+>>= $1
 endsnippet
 
-snippet bf "=<<"
+snippet bf "=<<" w
 =<< $1
 endsnippet
 
-snippet bf ">=>"
+snippet mc ">=>" w
 >=> $1
 endsnippet
 
 # symbols
-snippet f "->"
+snippet f "->" w
 -> $1
 endsnippet
 
-snippet ff "<-"
+snippet fb "<-" w
 <- $1
 endsnippet
 
-snippet fa "=>"
+snippet fa "=>" w
 => $1
+endsnippet
+
+snippet pp "++" w
+++ $1
 endsnippet
 
 # ADT
@@ -68,5 +74,69 @@ endsnippet
 
 # pragmas
 snippet prag "pragma" b
-{-# LANGUAGE $1  #-}
+{-# LANGUAGE $1 #-}
+endsnippet
+
+# comments
+snippet c "comment" b
+{-# $0 #-}
+endsnippet
+
+# imports
+snippet i "import" b
+import $1
+endsnippet
+
+snippet iq "import" b
+import qualified $1
+endsnippet
+
+snippet id "import Data.List" b
+import Data.$1
+endsnippet
+
+snippet idl "import Data.List" b
+import Data.List
+endsnippet
+
+snippet idm "import Data.Monoid" b
+import Data.Monoid
+endsnippet
+
+snippet ica "import Control.Applicative" b
+import Control.Applicative
+endsnippet
+
+snippet icm "import Control.Monad" b
+import Control.Monad
+endsnippet
+
+# functions
+snippet psl "putStrLn" w
+putStrLn $0
+endsnippet
+
+# Types Constructors
+snippet S "String" w
+String
+endsnippet
+
+snippet C "Char" w
+Char
+endsnippet
+
+snippet B "Bool" w
+Bool
+endsnippet
+
+snippet I "Int" w
+Int
+endsnippet
+
+snippet In "Integer" w
+Integer
+endsnippet
+
+snippet D "Double" w
+Double
 endsnippet
