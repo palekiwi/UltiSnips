@@ -9,6 +9,17 @@ $1 :: $2
 $1${3:} = ${4:undefined}
 endsnippet
 
+snippet insm "instance Monad where" b
+instance Monad $1 where
+	return ${2:x} = ${3:undefined}
+	${4:x} >>= ${5:f} = ${6:undefined}
+endsnippet
+
+snippet df "function definition" b
+$1 :: $2 -> $3
+$1${4:} = ${5:undefined}
+endsnippet
+
 snippet l "lambda" w
 (\\$1 -> $2)
 endsnippet
@@ -50,6 +61,10 @@ snippet mc ">=>" w
 >=> $1
 endsnippet
 
+snippet al "<|>" w
+<|> $1
+endsnippet
+
 # symbols
 snippet f "->" w
 -> $1
@@ -69,12 +84,51 @@ endsnippet
 
 # ADT
 snippet nt "newtype" b
-newtype $1 = $2
+newtype ${1} = $1 ${2:String} deriving (${3:Eq, Show})
+endsnippet
+
+snippet da "data" b
+data $1 =
+		$2
+	| $3
+	deriving (${4:Eq, Show})
+endsnippet
+
+snippet ts "type String" b
+type $1 = ${2:String} deriving (${3:Show, Eq})
+endsnippet
+
+snippet ti "type Integer" b
+type $1 = ${2:Integer}
 endsnippet
 
 # pragmas
-snippet prag "pragma" b
+snippet prag "prag" b
 {-# LANGUAGE $1 #-}
+endsnippet
+
+snippet prag "pragos" b
+{-# LANGUAGE OverloadedStrings #-}
+endsnippet
+
+snippet prag "pragqq" b
+{-# LANGUAGE QuasiQuotes #-}
+endsnippet
+
+snippet prag "pragfi" b
+{-# LANGUAGE FlexibleInstances #-}
+endsnippet
+
+snippet prag "pragfc" b
+{-# LANGUAGE FlexibleContexts #-}
+endsnippet
+
+snippet prag "pragmp" b
+{-# LANGUAGE MultiParamTypeClasses #-}
+endsnippet
+
+snippet prag "pragfd" b
+{-# LANGUAGE FunctionalDependencies #-}
 endsnippet
 
 # comments
@@ -83,43 +137,43 @@ snippet c "comment" b
 endsnippet
 
 # imports
-snippet i "import" b
+snippet im "import" b
 import $1
 endsnippet
 
-snippet iq "import" b
+snippet imq "import" b
 import qualified $1
 endsnippet
 
-snippet id "import Data." b
+snippet imd "import Data." b
 import Data.$1
 endsnippet
 
-snippet idc "import Data.Char" b
+snippet imdc "import Data.Char" b
 import Data.Char
 endsnippet
 
-snippet idl "import Data.List" b
+snippet imdl "import Data.List" b
 import Data.List
 endsnippet
 
-snippet idm "import Data.Monoid" b
+snippet imdm "import Data.Monoid" b
 import Data.Monoid
 endsnippet
 
-snippet ic "import Control." b
+snippet imc "import Control." b
 import Control.$1
 endsnippet
 
-snippet ica "import Control.Applicative" b
+snippet imca "import Control.Applicative" b
 import Control.Applicative
 endsnippet
 
-snippet icm "import Control.Monad" b
+snippet imcm "import Control.Monad" b
 import Control.Monad
 endsnippet
 
-snippet is "import System." b
+snippet ims "import System." b
 import System.$1
 endsnippet
 
