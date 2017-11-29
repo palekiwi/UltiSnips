@@ -1,0 +1,13 @@
+snippet av ".:" w
+.: $1
+endsnippet
+
+snippet ao ".:?" w
+.:? $1
+endsnippet
+
+snippet insfj "instance FromJSON" b
+instance FromJSON $1 where
+  parseJSON (Object v) = ${2:$1}
+                         <$> (v .: "$3")
+endsnippet
