@@ -2,8 +2,16 @@ snippet R "import R from Ramda"
 import R from 'ramda';
 endsnippet
 
+snippet imr "import {} from Ramda"
+import { $1 } from 'ramda';
+endsnippet
+
 snippet ram "import ramda function" b
 import $1 from 'ramda/src/$1';
+endsnippet
+
+snippet rer "{} from ramda" b
+const { $1 } = require('ramda');
 endsnippet
 
 snippet rtcl "R.tap(console.log)"

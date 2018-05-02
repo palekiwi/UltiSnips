@@ -7,45 +7,53 @@ snippet iife
 	'use strict';
 
 	${1}
-}())
+}());
 endsnippet
 
 snippet cre "create element"
-document.createElement('${1}')
+document.createElement('${1}');
 endsnippet
 
 snippet ach "append child"
-${1:document.body}.appendChild($2)
+${1:document.body}.appendChild($2);
 endsnippet
 
 snippet ael "addEventListener()" w
-addEventListener('$1', $2)
+addEventListener('$1', $2);
 endsnippet
 
 snippet ede "export default" b
-export default $1
+export default $1;
 endsnippet
 
 snippet edo "export default object"
 export default {
 	$0
-}
+};
 endsnippet
 
 snippet edf "export default function"
 export default function $1 ($2) {
 	$0
-}
+};
 endsnippet
 
 snippet exf "export function"
 export function $1 ($2) {
 	$0
-}
+};
 endsnippet
 
 snippet exc "export constant"
+export const $1 = $0;
+endsnippet
+
+snippet excc "export constant a = 'a'"
 export const $1 = "$1";
+endsnippet
+
+snippet exco "export constant"
+export const $1 = {$0};
 endsnippet
 
 snippet ip "interpolate string" w
@@ -126,6 +134,14 @@ snippet re
 const ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} = require('$1');
 endsnippet
 
+snippet rq "require()"
+require('$1');
+endsnippet
+
+snippet renm
+const {$0} = require('$1');
+endsnippet
+
 snippet ree
 const ${1:} = require('$1');
 endsnippet
@@ -150,4 +166,8 @@ endsnippet
 
 snippet # "id=" w
 id="$1"
+endsnippet
+
+snippet p "object property"
+$1: $0,
 endsnippet

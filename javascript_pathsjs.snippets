@@ -1,0 +1,10 @@
+snippet pathsPolygon "require pathsjs/polygon" b
+const Polygon = require('paths/polygon');
+endsnippet
+
+snippet pathspolygon "pathsjs polygon" b
+const polygon = Polygon({
+  points: [[$1]],
+  closed: ${2:true}
+});
+endsnippet

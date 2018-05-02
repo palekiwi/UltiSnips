@@ -10,6 +10,10 @@ snippet imn "named import"
 import { $0 } from '$1';
 endsnippet
 
+snippet ima "import as"
+import * as $0 from '$1';
+endsnippet
+
 snippet imui
 import ${1/(\w*)/\u$1/} from 'muicss/lib/react/$1';
 endsnippet
@@ -20,10 +24,6 @@ endsnippet
 
 snippet me "module.exports" b
 module.exports = $1;
-endsnippet
-
-snippet imr "Ramda" b
-import R from 'ramda';
 endsnippet
 
 snippet iml "Lodash" b

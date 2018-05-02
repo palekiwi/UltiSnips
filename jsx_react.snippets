@@ -153,9 +153,9 @@ endsnippet
 
 # JSX
 snippet t "jsx tag"
-<${1:div}>
+<${1}>
 	$0
-</${1/(\w+).*/$1/}>
+</${1/([^\s]+).*/$1/}>
 endsnippet
 
 snippet ts "self-closing tag" b
@@ -174,4 +174,10 @@ endsnippet
 
 snippet reref "ref={}" w
 ref={c => this.$1 = c}
+endsnippet
+
+snippet edl "export default lambda" b
+export default ($1) => (
+	$0
+);
 endsnippet
