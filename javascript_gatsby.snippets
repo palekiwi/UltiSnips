@@ -5,3 +5,25 @@ export const query = graphql\`
 	}
 \`;
 endsnippet
+
+snippet gatp "gatsby-plugin-" b
+'gatsby-plugin-$0',
+endsnippet
+
+snippet gats "gatsby-source-" b
+'gatsby-source-$0',
+endsnippet
+
+snippet gatt "gatsby-transformer-" b
+'gatsby-transformer-$0',
+endsnippet
+
+snippet gatfs "gatsby-source-filesystem" b
+{
+	resolve: 'gatsby-source-filesystem',
+	options: {
+		name: '$1',
+		path: \`${__dirname}/$0\`
+	}
+}
+endsnippet

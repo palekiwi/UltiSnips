@@ -158,8 +158,12 @@ snippet t "jsx tag"
 </${1/([^\s]+).*/$1/}>
 endsnippet
 
-snippet ts "self-closing tag" b
-<$1 />
+snippet ts "jsx tag single line" w
+<${1}>$0</${1/([^\s]+).*/$1/}>
+endsnippet
+
+snippet tsc "self-closing tag" w
+<$1/>
 endsnippet
 
 snippet reprops "react props"

@@ -1,0 +1,60 @@
+extends typescript
+extends jsx
+
+snippet imre "import * as react"
+import * as React from 'react';
+endsnippet
+
+snippet sfc "stateless functional component"
+import * as React from 'react';
+
+interface ${2:Props} {
+	$3: $4
+}
+
+const ${1:Component}: React.SFC<$2> = ({ $3 }) => (
+	${0:<div>component</div>}
+);
+
+export default $1;
+endsnippet
+
+snippet scc "class component"
+import * as React from 'react';
+
+const initialState = {$2};
+type State = Readonly<typeof initialState>;
+
+interface Props {
+	$3: $4
+}
+
+class ${1:Component} extends React.Component<Props, State> {
+	state = initialState
+
+	render () {
+		return ${0:<div>component</div>};
+	}
+}
+
+export default $1;
+endsnippet
+
+snippet helmet "helmet" b
+<Helmet
+	title={$1}
+	meta={[
+		{name: '$2', description: '$0'},
+	]}
+/>
+endsnippet
+
+snippet csfc "sfc constant"
+const ${1:Component}: React.SFC<$2> = ({ $3 }) => (
+	${0:<div>component</div>}
+);
+endsnippet
+
+snippet gatimg "import Img from gatsby-image" b
+import Img from 'gatsby-image';
+endsnippet

@@ -19,3 +19,32 @@ snippet ava "ava config" b
 	"babel": "inherit"
 }
 endsnippet
+
+snippet tsga "tsconfig for gatsby" b
+{
+  "compilerOptions": {
+    "outDir": "./dist/",
+    "sourceMap": true,
+    "noImplicitAny": true,
+    "module": "commonjs",
+    "target": "esnext",
+    "jsx": "react",
+    "lib": ["dom", "es2015", "es2017"]
+  },
+  "include": ["./src/**/*"]
+}
+endsnippet
+
+snippet s "key-string pair" b
+"$1": "$2",$0
+endsnippet
+
+snippet o "key-object pair" b
+"$1": {
+	$0
+},
+endsnippet
+
+snippet a "key-array pair" b
+"$1": [$0],
+endsnippet

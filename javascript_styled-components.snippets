@@ -1,0 +1,41 @@
+snippet imsc "import styled-components" b
+import styled from "styled-components";
+endsnippet
+
+snippet sch1 "styled.h1" b
+const $1 = styled.h1\`
+	$0
+\`
+endsnippet
+
+snippet sc "styled." b
+const $1 = styled.$2\`
+	$0
+\`
+endsnippet
+
+snippet scsfc "styled sfc" b
+interface ${2:$1Props} {
+	className?: string
+	$3: $4
+}
+
+const ${1:Component}: React.SFC<$2> = (props) => (<${5:} className={props.className}/>);
+const $6 = styled($1)\`
+	$0
+\`
+endsnippet
+
+snippet scsfcc "styled sfc with children" b
+interface ${2:$1Props} {
+	className?: string
+	$3: $4
+}
+
+const ${1:Component}: React.SFC<$2> = (props) => (
+	<${5:} className={props.className}>{props.children}</$5>
+);
+const $6 = styled($1)\`
+	$0
+\`
+endsnippet
