@@ -14,6 +14,12 @@ const $1 = styled.$2\`
 \`
 endsnippet
 
+snippet esc "export styled." b
+export const $1 = styled.$2\`
+	$0
+\`
+endsnippet
+
 snippet scsfc "styled sfc" b
 interface ${2:$1Props} {
 	className?: string
