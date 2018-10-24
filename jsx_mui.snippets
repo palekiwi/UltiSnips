@@ -1,15 +1,45 @@
-snippet	muic "import from mui core" b
-import $1 from "@material-ui/core/$1";
-endsnippet
-
-snippet	muii "import from mui icon" b
+snippet muii "import mui icons" b
 import $1Icon from "@material-ui/icons/$1";
 endsnippet
 
-snippet	muiws "import withStyles" b
-import { createStyles, withStyles } from "@material-ui/core/styles";
+snippet muic "import mui core" b
+import $1 from "@material-ui/core/$1";
 endsnippet
 
-snippet	cnc "className={classes.}" w
+snippet muis "import mui styles" b
+import { $1 } from "@material-ui/core/styles";
+endsnippet
+
+snippet cnc "className={classes.}" w
 className={classes$0}
+endsnippet
+
+snippet sfcm "MUI stateless functional component"
+import * as React from "react";
+import { createStyles, Theme, WithStyles, withStyles }  from "@material-ui/core/styles";
+
+const styles = ({palette, spacing}: Theme) => createStyles({
+	root: {
+	},
+});
+
+export interface $1Props {
+	$3: $4
+}
+
+type Props = WithStyles<typeof styles> & $1Props;
+
+export const $1: React.SFC<Props> = ({ classes, $3 }) => {
+	return (
+		$0
+	);
+}
+
+export const Styled$1 = withStyles(styles)($1);
+endsnippet
+
+snippet muiidx "import export mui component" b
+import { Styled$1 as $1 } from "./$1";
+
+export { $1 };
 endsnippet
