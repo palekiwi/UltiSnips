@@ -27,15 +27,15 @@ interface $1Props {
 	$3: $4
 }
 
-type Props = WithStyles<typeof styles> & $1Props;
+type BaseProps = WithStyles<typeof styles> & $1Props;
 
-const Component: React.SFC<Props> = ({ classes, $3 }) => {
+const $1Base: React.SFC<BaseProps> = ({ classes, $3 }) => {
 	return (
 		$0
 	);
 }
 
-const $1 = withStyles(styles)(Component);
+const $1 = withStyles(styles)($1Base);
 
 export {
 	$1,
