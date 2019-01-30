@@ -2,16 +2,16 @@ snippet im "named import"
 import { $0 } from "$1";
 endsnippet
 
+snippet imc "import component"
+import { ${0:$1} } from "src/components/$1";
+endsnippet
+
 snippet imn "named import"
 import { ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} } from "$1";
 endsnippet
 
 snippet imd
 import ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/$2(?4:\u$4)/} from "$1";
-endsnippet
-
-snippet imc
-import ${1/(.*\/)*(\w*)(-)?(\w*)(\.[^.]*$)?(\.[^.]*$)?/\u$2(?4:\u$4)/} from "$1";
 endsnippet
 
 snippet ima "import as"
