@@ -1,5 +1,5 @@
 snippet imsc "import styled-components" b
-import { styled } from "styled-components";
+import styled from "styled-components";
 endsnippet
 
 snippet imp "import primithemes" b
@@ -8,6 +8,44 @@ endsnippet
 
 snippet pt "props => props.theme" w
 ${props => props.theme$0};
+endsnippet
+
+snippet imth "import from src/theme" b
+import { color, space } from "src/theme";
+endsnippet
+
+snippet imtp "import from src/theme" b
+import { $0 } from "src/theme/typography";
+endsnippet
+
+snippet immq "import from src/theme/media" b
+import { $0 } from "src/theme/media";
+endsnippet
+
+snippet col "color: ${color}"
+${1:color}: ${color("$0")};
+endsnippet
+
+snippet spa "${space}"
+${1:padding}: ${space($0)};
+endsnippet
+
+snippet wei "${weight}"
+font-weight: ${weight("$0")};
+endsnippet
+
+snippet rad "${radius}"
+border-radius: ${radius($0)};
+endsnippet
+
+snippet shad "${shadow}"
+box-shadow: ${shadow($0)};
+endsnippet
+
+snippet mq "${media}"
+${1:desktop(css`
+	$0
+`)}
 endsnippet
 
 snippet sch1 "styled.h1" b
