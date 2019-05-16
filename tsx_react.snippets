@@ -5,14 +5,10 @@ snippet imre "import * as react"
 import * as React from "react";
 endsnippet
 
-snippet sfc "stateless functional component"
-import * as React from 'react';
+snippet rfc "react functional component"
+import * as React from "react";
 
-interface ${2:Props} {
-	$3: $4
-}
-
-const ${1:Component}: React.SFC<$2> = ({ $3 }) => (
+const ${1:Component}: React.SFC = () => (
 	${0:<div>component</div>}
 );
 

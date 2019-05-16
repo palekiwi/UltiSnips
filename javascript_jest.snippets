@@ -1,3 +1,15 @@
+snippet rencor "renders correctly" b
+import * as React from "react";
+import { render } from "react-testing-library";
+$1
+
+it("renders correctly", () => {
+	const { asFragment } = render($0);
+
+	expect(asFragment).toMatchSnapshot();
+});
+endsnippet
+
 ### SETUP ###
 snippet desc "jest describe" b
 describe('$1', () => {
