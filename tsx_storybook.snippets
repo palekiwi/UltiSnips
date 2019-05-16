@@ -1,0 +1,13 @@
+extends typescript
+extends jsx
+
+snippet stories "stories"
+import * as React from "react";
+import { storiesOf } from "@storybook/react";
+import { $1 } from "./$1"
+
+const stories = storiesOf("${2:$1}", module);
+
+stories
+  .add("$3", () => $0)
+endsnippet
