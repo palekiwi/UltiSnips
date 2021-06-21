@@ -1,0 +1,325 @@
+snippet mod "module where" b
+module `!p snip.rv = re.sub(r'\.hs$', '', fn)` where
+
+$0
+endsnippet
+
+snippet main "main :: IO ()" b
+main :: IO ()
+main = ${1:undefined}
+endsnippet
+
+snippet insm "instance Monad where" b
+instance Monad $1 where
+	return ${2:x} = ${3:undefined}
+	${4:x} >>= ${5:f} = ${6:undefined}
+endsnippet
+
+snippet d "function definition" b
+$1 :: $2 -> $3
+$1${4:} = ${5:undefined}
+endsnippet
+
+snippet c "constant definition" b
+$1 :: $2
+$1 = ${3:undefined}
+endsnippet
+
+snippet l "lambda" w
+\\$1 -> $2
+endsnippet
+
+snippet sl "lambda" w
+$ \\$1 -> $2
+endsnippet
+
+snippet le "lambda" w
+\\_ -> $1
+endsnippet
+
+snippet lb "x <- m" b
+$1 <- $2
+endsnippet
+
+snippet if "if then else" b
+if $1
+then $2
+else $3
+endsnippet
+
+snippet ca "case _ of" w
+case $1 of
+	${2:True} -> $3
+	${4:False} -> $5
+endsnippet
+
+snippet com "comprehension"
+[ $1 | $2 <- $3 ]
+endsnippet
+
+# >> infix operators
+snippet i "infix" w
+\`$1\` $0
+endsnippet
+
+snippet m "<$>" w
+<$> $1
+endsnippet
+
+snippet a "<*>" w
+<*> $1
+endsnippet
+
+snippet b ">>=" w
+>>= $1
+endsnippet
+
+snippet bf "=<<" w
+=<< $1
+endsnippet
+
+snippet mc ">=>" w
+>=> $1
+endsnippet
+
+snippet al "<|>" w
+<|> $1
+endsnippet
+
+snippet f "->" w
+-> $1
+endsnippet
+
+snippet fb "<-" w
+<- $1
+endsnippet
+
+snippet fa "=>" w
+=> $1
+endsnippet
+
+snippet pp "++" w
+++ $1
+endsnippet
+# << infix operators
+
+# >> ADT
+snippet nt "newtype" b
+newtype ${1} = $1 ${2:String} deriving (${3:Eq, Show})
+endsnippet
+
+snippet ntt
+newtype $1 = ${1/(\w*)(.)*/$1/} ${2:String} ${3:deriving (Eq, Show)}
+endsnippet
+
+snippet da "data" b
+data $1 = $2
+	      | $3
+	      deriving (${4:Eq, Show})
+endsnippet
+
+snippet ts "type String" b
+type $1 = ${2:String}
+endsnippet
+
+snippet ti "type Integer" b
+type $1 = ${2:Integer}
+endsnippet
+# << ADT
+
+# >> pragmas
+snippet prag "prag" b
+{-# LANGUAGE $1 #-}
+endsnippet
+
+snippet pragos "pragos" b
+{-# LANGUAGE OverloadedStrings #-}
+endsnippet
+
+snippet pragqq "pragqq" b
+{-# LANGUAGE QuasiQuotes #-}
+endsnippet
+
+snippet pragfi "pragfi" b
+{-# LANGUAGE FlexibleInstances #-}
+endsnippet
+
+snippet pragfc "pragfc" b
+{-# LANGUAGE FlexibleContexts #-}
+endsnippet
+
+snippet pragrwc "RecordWildCards" b
+{-# LANGUAGE RecordWildCards #-}
+endsnippet
+
+snippet pragmp "pragmp" b
+{-# LANGUAGE MultiParamTypeClasses #-}
+endsnippet
+
+snippet pragfd "pragfd" b
+{-# LANGUAGE FunctionalDependencies #-}
+endsnippet
+
+snippet pragdg "pragdg" b
+{-# LANGUAGE DeriveGeneric #-}
+endsnippet
+
+snippet praggnd "praggnd" b
+{-# LANGUAGE GeneralizedNewtypeDeriving #-}
+endsnippet
+
+snippet pragnip "pragnip" b
+{-# LANGUAGE NoImplicitPrelude #-}
+endsnippet
+# << pragmas
+
+# comments >>
+snippet co "comment" b
+{-# $0 #-}
+endsnippet
+# << comments
+
+# imports >>
+snippet im "import" b
+import $1
+endsnippet
+
+snippet imq "import qualified" b
+import qualified $1
+endsnippet
+
+snippet imd "import Data." b
+import Data.$1
+endsnippet
+
+snippet imdc "import Data.Char" b
+import Data.Char
+endsnippet
+
+snippet iqdm "import qualified Data.Map" b
+import qualified Data.Map as M
+endsnippet
+
+snippet imde "import Data.Either" b
+import Data.Either
+endsnippet
+
+snippet imdm "import Data.Maybe" b
+import Data.Maybe
+endsnippet
+
+snippet imdl "import Data.List" b
+import Data.List
+endsnippet
+
+snippet imdbs "import Data.ByteString" b
+import Data.ByteString
+endsnippet
+
+snippet imqbsl "import qualified Data.ByteString.Lazy" b
+import qualified Data.ByteString.Lazy as BL
+endsnippet
+
+snippet imdmo "import Data.Monoid" b
+import Data.Monoid
+endsnippet
+
+snippet imc "import Control." b
+import Control.$1
+endsnippet
+
+snippet imcc "import Control.Concurrent" b
+import Control.Concurrent
+endsnippet
+
+snippet imce "import Control.Exception" b
+import Control.Exception
+endsnippet
+
+snippet imca "import Control.Applicative" b
+import Control.Applicative
+endsnippet
+
+snippet imcm "import Control.Monad" b
+import Control.Monad
+endsnippet
+
+snippet ims "import System." b
+import System.$1
+endsnippet
+
+snippet imsi "import System.IO" b
+import System.IO
+endsnippet
+
+snippet imt "import Text." b
+import Text.$1
+endsnippet
+
+snippet imn "import Network." b
+import Network.$1
+endsnippet
+
+# >> Transformers
+snippet imtc "import Control.Monad.Trans.Class" b
+import Control.Monad.Trans.Class
+endsnippet
+
+snippet imti "import Control.Monad.IO.Class" b
+import Control.Monad.IO.Class
+endsnippet
+
+snippet imts "import Control.Monad.Trans.State" b
+import Control.Monad.Trans.State
+endsnippet
+
+snippet imtr "import Control.Monad.Trans.Reader" b
+import Control.Monad.Trans.Reader
+endsnippet
+
+snippet imtm "import Control.Monad.Trans.Maybe" b
+import Control.Monad.Trans.Maybe
+endsnippet
+
+snippet imte "import Control.Monad.Trans.Except" b
+import Control.Monad.Trans.Except
+endsnippet
+# << Transformers
+# << imports
+
+# functions
+snippet psl "putStrLn" w
+putStrLn $0
+endsnippet
+
+# Types Constructors
+snippet S "String" w
+String
+endsnippet
+
+snippet C "Char" w
+Char
+endsnippet
+
+snippet B "Bool" w
+Bool
+endsnippet
+
+snippet I "Int" w
+Int
+endsnippet
+
+snippet In "Integer" w
+Integer
+endsnippet
+
+snippet D "Double" w
+Double
+endsnippet
+
+# layout>>
+snippet sep "----" b
+-------------------------------------------------------------------------------
+
+$0
+endsnippet
