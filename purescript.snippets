@@ -16,7 +16,7 @@ instance Monad $1 where
 endsnippet
 
 snippet d "function definition" b
-$1 :: $2 -> $3
+$1 :: ${2:∀} -> $3
 $1${4:} = ${5:undefined}
 endsnippet
 
@@ -315,6 +315,10 @@ endsnippet
 
 snippet D "Double" w
 Double
+endsnippet
+
+snippet aa "For all" w
+∀
 endsnippet
 
 # layout>>
