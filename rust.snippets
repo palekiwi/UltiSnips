@@ -1,0 +1,21 @@
+# functions
+snippet fn "fn block" w
+fn $1($2) -> $3 {
+	$0
+}
+endsnippet
+
+snippet pfn "fn block" w
+pub fn $1($2) -> $3 {
+	$0
+}
+endsnippet
+
+snippet pr "println!" w
+println!("{$1}", $0);
+endsnippet
+
+# types
+snippet tres "Result" w
+Result<$1, &'static str>$0
+endsnippet
