@@ -22,3 +22,11 @@ endsnippet
 snippet tres "Result" w
 Result<$1, &'static str>$0
 endsnippet
+
+#match
+snippet mres "match Result" w
+match $1 {
+	Ok(${2:val}) => { $3 },
+	Err(${4:_}) => { $0 }
+};
+endsnippet
