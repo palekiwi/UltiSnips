@@ -36,11 +36,20 @@ snippet ad "#[derive()]" b
 #[derive($1)]
 endsnippet
 
-snippet asp "#[should_panic]" b
-#[should_panic]
+snippet acfg "#[cfg(test)]" b
+#[cfg(test)]
+fn$0
 endsnippet
 
 snippet at "#[test]" b
 #[test]
 fn$0
+endsnippet
+
+snippet asp "#[should_panic]" b
+#[should_panic]
+endsnippet
+
+snippet aig "#[ignore]" b
+#[ignore]
 endsnippet
