@@ -30,3 +30,17 @@ match $1 {
 	Err(${4:_}) => { $0 }
 };
 endsnippet
+
+#annotations
+snippet ad "#[derive()]" b
+#[derive($1)]
+endsnippet
+
+snippet asp "#[should_panic]" b
+#[should_panic]
+endsnippet
+
+snippet at "#[test]" b
+#[test]
+fn$0
+endsnippet
