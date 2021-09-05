@@ -18,6 +18,14 @@ snippet pr "println!" w
 println!("${1:{:?}}", $0);
 endsnippet
 
+snippet c "closure" w
+|${1:x}| $0
+endsnippet
+
+snippet de "{:?}" w
+{:?}
+endsnippet
+
 # types
 snippet tres "Result" w
 Result<$1, &'static str>$0
