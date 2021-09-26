@@ -44,7 +44,7 @@ match $1 {
 endsnippet
 
 #annotations
-snippet ad "#[derive()]" b
+snippet der "#[derive()]" b
 #[derive($0)]
 endsnippet
 
@@ -69,4 +69,8 @@ endsnippet
 
 snippet aig "#[ignore]" b
 #[ignore]
+endsnippet
+
+snippet rty "#[rtype()]" b
+#[rtype(${0:result = "()"})]
 endsnippet
