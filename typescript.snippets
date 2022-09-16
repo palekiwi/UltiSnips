@@ -15,3 +15,17 @@ endsnippet
 snippet imh "import from chakra" b
 import { $1 } from "@chakra-ui/react";
 endsnippet
+
+snippet rfc "react FC" b
+import * as React from "react";
+
+const $1 = () => {
+  return <div></div>;
+};
+
+export default $1;
+endsnippet
+
+snippet c "const" b
+const $0 = $1;
+endsnippet
